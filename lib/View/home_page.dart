@@ -30,11 +30,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [
               Color(0xFF4B0082), // Indigo
               Color(0xFF1E1E4B), // Darker purple-blue
@@ -42,56 +43,72 @@ class HomePage extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'WiFi GAMES',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 2.0,
-                  shadows: [
-                    Shadow(
-                      color: Colors.black26,
-                      offset: Offset(2, 2),
-                      blurRadius: 4,
+          child: Container(
+            width: 360,
+            height: double.infinity,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFF4B0082), // Indigo
+                  Color(0xFF1E1E4B), // Darker purple-blue
+                ],
+              ),
+            ),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'WiFi GAMES',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2.0,
+                      shadows: [
+                        Shadow(
+                          color: Colors.black26,
+                          offset: Offset(2, 2),
+                          blurRadius: 4,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildGameTile(
-                    context,
-                    image: 'assets/icon/dash.png',
-                    title: 'DASH',
-                    url: 'https://yashcwebearl.github.io/Flappy/',
                   ),
-                  _buildGameTile(
-                    context,
-                    image: 'assets/icon/icon.png',
-                    title: 'WORD PUZZLE',
-                    url: 'https://yashcwebearl.github.io/wordpuzzle/',
+                  const SizedBox(height: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      _buildGameTile(
+                        context,
+                        image: 'assets/icon/dash.png',
+                        title: 'DASH',
+                        url: 'https://yashcwebearl.github.io/Flappy/',
+                      ),
+                      _buildGameTile(
+                        context,
+                        image: 'assets/icon/icon.png',
+                        title: 'WORD PUZZLE',
+                        url: 'https://yashcwebearl.github.io/wordpuzzle/',
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      _buildGameTile(
+                        context,
+                        image: 'assets/icon/tic_tac.png',
+                        title: 'Tic Tac Toe',
+                        url: 'https://yashcwebearl.github.io/tic_tac_toe/',
+                      ),
+                    ],
                   ),
                 ],
               ),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildGameTile(
-                    context,
-                    image: 'assets/icon/tic_tac.png',
-                    title: 'Tic Tac Toe',
-                    url: 'https://yashcwebearl.github.io/tic_tac_toe/',
-                  ),
-                ],
-              ),
-            ],
+            ),
           ),
         ),
       ),
